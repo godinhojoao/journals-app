@@ -3,6 +3,11 @@
 - Foi basicamente um desafio realizado por mim há algum tempo atras, resolvi colocar no github considerando que é um projeto bem legalzinho :D.
 - É desenvolvida utilizando reactjs+typescript, consome uma fake-api feita com miragejs.
 
+# Como rodar:
+ - `nvm use`
+ - `npm i`
+ - `npm run start`
+
 ## A aplicação possibilita:
 
 - 1. Criar uma conta.
