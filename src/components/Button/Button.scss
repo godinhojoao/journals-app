@@ -1,0 +1,43 @@
+@import './../../styles/settings/settings.variables';
+@import './../../styles/utilities';
+
+button {
+  background-color: map-get($colors, 'primary');
+  border: 1px transparent;
+  border-radius: px-to-rem(30);
+  color: white;
+  font-family: map-get($fonts, 'primary');
+  font-weight: bold;
+  height: px-to-rem(40);
+  width: px-to-rem(160);
+
+  &:hover {
+    background-color: darken(map-get($colors, 'primary'), 5%);
+    color: #e9e9e9;
+    cursor: pointer;
+  }
+
+  &.disabled {
+    background-color: #0000001f;
+    color: #8b8b8b;
+  }
+
+  &.outlined-button {
+    background-color: transparent;
+    border: 1px solid map-get($colors, 'primary');
+    color: map-get($colors, 'primary');
+
+    &:hover {
+      border: 1px solid darken(map-get($colors, 'primary'), 10%);
+      background-color: darken(map-get($colors, 'primary-background'), 10%);
+    }
+
+    svg {
+      margin-right: px-to-rem(4);
+    }
+
+    @media only screen and (max-width: 420px) {
+      width: px-to-rem(120);
+    }
+  }
+}

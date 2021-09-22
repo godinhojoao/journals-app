@@ -1,0 +1,80 @@
+@import './../../styles/settings/settings.variables';
+@import './../../styles/utilities';
+
+.input-container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin: px-to-rem(10) 0;
+  min-height: px-to-rem(65);
+  position: relative;
+  width: 100%;
+
+  &.without-formik {
+    @media only screen and (min-width: 630px) {
+      width: 55%;
+    }
+  }
+
+  .input {
+    border: 1px solid #f8efe9;
+    border-radius: px-to-rem(4);
+    color: map-get($colors, 'primary');
+    font-family: map-get($fonts, 'primary');
+    height: px-to-rem(44);
+    min-width: px-to-rem(250);
+    padding: px-to-rem(20) px-to-rem(18) px-to-rem(4) px-to-rem(18);
+    position: relative;
+
+    &.text-area {
+      height: px-to-rem(250);
+      padding-top: px-to-rem(24);
+      margin-bottom: px-to-rem(12);
+      resize: none;
+    }
+
+    &:active,
+    &:hover,
+    &:focus {
+      @include box-shadow(rgba(map-get($colors, 'journal-secundary-background'), 0.9));
+
+      border: 1px solid map-get($colors, 'journal-secundary-background');
+    }
+
+    & ~ label {
+      color: map-get($colors, 'primary');
+      font-size: px-to-rem(14);
+      font-weight: bold;
+      left: px-to-rem(12);
+      letter-spacing: 0.5px;
+      pointer-events: none;
+      position: absolute;
+      top: px-to-rem(14);
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    &:focus ~ label,
+    &:hover ~ label,
+    &.has-content ~ label {
+      color: #736d6b;
+      font-size: px-to-rem(12);
+      font-weight: 500;
+      top: px-to-rem(8);
+      transition: 0.3s;
+    }
+  }
+
+  &__error {
+    color: map-get($colors, 'light-red');
+    font-size: px-to-rem(11);
+    margin-left: px-to-rem(4);
+    margin-top: px-to-rem(2);
+    max-width: px-to-rem(240);
+
+    @media only screen and (max-width: 420px) {
+      font-size: px-to-rem(9);
+      max-width: px-to-rem(150);
+    }
+  }
+}

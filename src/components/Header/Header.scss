@@ -1,0 +1,32 @@
+@import './../../styles/utilities';
+
+.main-header {
+  @extend .flex-align-center;
+  justify-content: space-between;
+  margin-top: px-to-rem(28);
+
+  &__logo {
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  @media only screen and(max-width: 430px) {
+    &__logo {
+      width: px-to-rem(120);
+    }
+  }
+
+  @media only screen and (max-width: 370px) {
+    .main-header__buttons-container {
+      // I need to use it because I can't use @extend on @media
+      display: flex;
+      align-items: center;
+    }
+
+    button {
+      width: px-to-rem(80);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import './../../styles/utilities';
+
+.journals-page {
+  @extend .flex-justify-center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100% - 130px);
+  width: 100%;
+
+  &.has-journals,
+  &.has-notes {
+    height: auto;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: px-to-rem(10);
+    margin: px-to-rem(20) 0;
+
+    @media only screen and (max-width: 480px) {
+      justify-content: space-between;
+    }
+  }
+}

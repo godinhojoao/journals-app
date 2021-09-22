@@ -1,0 +1,18 @@
+@function px-to-rem($size, $default: 16) {
+  @return #{($size/$default)}rem;
+}
+
+@mixin box-shadow($color) {
+  box-shadow: -2px 2px 2px $color;
+}
+
+// classes to reuse
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-justify-center {
+  display: flex;
+  justify-content: center;
+}

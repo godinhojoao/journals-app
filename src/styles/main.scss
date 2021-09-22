@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Montserrat&display=swap');
+
+@import './settings/settings.normalize';
+@import './settings/settings.variables';
+@import './utilities';
+
+html,
+body,
+#root {
+  background-color: map-get($colors, 'primary-background');
+  background-image: url('src/../../assets/background.svg');
+  background-repeat: no-repeat;
+  background-size: 74%;
+  font-family: map-get($fonts, 'primary');
+  height: 100vh;
+  overflow-x: hidden;
+  width: 100vw;
+
+  @media only screen and (min-width: 500px) {
+    background-size: 54%;
+  }
+
+  @media only screen and (min-width: 650px) {
+    background-size: 40%;
+  }
+
+  @media only screen and (min-width: 800px) {
+    background-size: 30%;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    background-size: 20%;
+  }
+}
+
+#root {
+  color: map-get($colors, 'primary');
+  padding: 0 px-to-rem(22);
+}
+
+.link-style {
+  cursor: pointer;
+  font-size: px-to-rem(12);
+  font-weight: bold;
+  text-decoration: underline;
+
+  &:hover {
+    color: darken(map-get($colors, 'primary'), 10%);
+  }
+}
+
+.avoid-phrase-overflow {
+  word-break: break-all;
+  text-align: center;
+}

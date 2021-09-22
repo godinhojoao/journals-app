@@ -1,0 +1,120 @@
+@import './../../styles/settings/settings.variables';
+@import './../../styles/utilities';
+
+.journal-limit {
+  cursor: pointer;
+  display: flex;
+  height: px-to-rem(180);
+  margin-top: px-to-rem(20);
+  width: 45%;
+
+  &.default-cursor {
+    cursor: default;
+  }
+
+  &.create-card {
+    margin-bottom: px-to-rem(8);
+
+    .journal-limit__left-side,
+    .journal-limit__content-side {
+      background-color: #f8e5d6;
+      border-right: 1px solid #e0cec1;
+    }
+
+    .journal-limit__left-side {
+      box-shadow: inset -2px -4px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .journal-limit__content-side {
+      box-shadow: inset -3px -3px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &:hover {
+      .journal-limit__left-side {
+        background-color: darken(#f8e5d6, 6%);
+        box-shadow: inset -3px -3px 4px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          box-shadow: inset -3px -3px 4px rgba(0, 0, 0, 0.19);
+        }
+      }
+
+      .journal-limit__content-side {
+        background-color: darken(#f8e5d6, 4%);
+        box-shadow: inset -3px -3px 4px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          box-shadow: inset -3px -3px 4px rgba(0, 0, 0, 0.19);
+        }
+      }
+    }
+
+    @media only screen and (min-width: 900px) {
+      height: px-to-rem(220);
+      width: px-to-rem(180);
+    }
+  }
+
+  &__left-side {
+    background-color: map-get($colors, 'journal-separator');
+    border-radius: px-to-rem(5) px-to-rem(0) px-to-rem(0) px-to-rem(5);
+    box-shadow: inset 0px -2px 9px darken(map-get($colors, 'journal-separator'), 3%);
+    height: 100%;
+    width: 10%;
+  }
+
+  &:hover {
+    .odd {
+      background-color: darken(
+        map-get($colors, 'journal-secundary-background'),
+        4%
+      );
+      box-shadow: inset 0px -2px 9px #034da15d;
+    }
+
+    .even {
+      background-color: darken(
+        map-get($colors, 'journal-primary-background'),
+        6%
+      );
+      box-shadow: inset 0px -2px 9px #012b5adc;
+    }
+
+    .journal-limit__left-side {
+      box-shadow: inset 0px -2px 9px darken(map-get($colors, 'journal-separator'), 8%);
+    }
+  }
+
+  &__content-side {
+    @extend .flex-align-center;
+    border-radius: 0 px-to-rem(15) px-to-rem(18) 0;
+    justify-content: center;
+    padding: 0 px-to-rem(10);
+    width: 90%;
+
+    &.even {
+      background-color: map-get($colors, 'journal-primary-background');
+      box-shadow: inset 0px -2px 9px #012b5ac0;
+    }
+
+    &.odd {
+      background-color: map-get($colors, 'journal-secundary-background');
+      box-shadow: inset 0px -2px 9px #034da138;
+    }
+
+    &__title {
+      color: black;
+      font-weight: bold;
+      font-family: map-get($fonts, 'secundary');
+      word-break: break-all;
+    }
+  }
+
+  @media only screen and (min-width: 410px) {
+    width: px-to-rem(150);
+  }
+
+  @media only screen and (min-width: 550px) {
+    margin-right: px-to-rem(8);
+  }
+}

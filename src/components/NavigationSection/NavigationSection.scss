@@ -1,0 +1,25 @@
+@import './../../styles/utilities';
+@import './../../styles/settings/settings.variables';
+
+.navigation-section {
+  @extend .flex-align-center;
+  justify-content: space-between;
+  margin-top: px-to-rem(14);
+
+  &__page-actions {
+    align-items: center;
+    display: flex;
+    color: black;
+
+    &:hover {
+      color: map-get($colors, 'primary');
+      cursor: pointer;
+    }
+
+    &__title {
+      font-family: map-get($fonts, 'secundary');
+      font-size: px-to-rem(24);
+      font-weight: bold;
+    }
+  }
+}

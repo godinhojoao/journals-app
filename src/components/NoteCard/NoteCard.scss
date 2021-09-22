@@ -1,0 +1,26 @@
+@import './../../styles/settings/settings.variables';
+@import './../../styles/utilities';
+
+.note-card {
+  @include box-shadow(rgba(#e0d7d3, 0.9));
+  background-color: map-get($colors, 'note-background');
+  border: 1px solid darken(map-get($colors, 'note-background'), 10%);
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  font-size: px-to-rem(20);
+  height: px-to-rem(150);
+  overflow-wrap: break-word;
+  padding: px-to-rem(12);
+  width: px-to-rem(150);
+
+  &:hover {
+    background-color: darken(map-get($colors, 'note-background'), 10%);
+    box-shadow: none;
+    color: white;
+  }
+
+  @media only screen and (max-width: 400px) {
+    width: 47%;
+  }
+}
